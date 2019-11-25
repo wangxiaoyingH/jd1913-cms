@@ -2,4 +2,7 @@ server:
   port: 9999
 spring:
   datasource:
-    data-password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.96.88.49:3306/cms-studies?useunicode=true;&characterEncoding=utf8
+    username: root
+    password: root
