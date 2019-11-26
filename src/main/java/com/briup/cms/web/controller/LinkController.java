@@ -55,7 +55,7 @@ public class LinkController {
     }
 
 
-    @GetMapping("/getAll")
+    @PostMapping("/getAll")
     @ApiOperation("获取所有链接数据")
     public Message<List<Link>> getAll() {
         List<Link> links = linkService.getAllLink();

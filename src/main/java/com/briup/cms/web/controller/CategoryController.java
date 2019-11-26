@@ -30,6 +30,21 @@ public class CategoryController {
         return MessageUtil.success();
     }
 
+
+    @GetMapping("/getAll")
+    @ApiOperation("获取栏目所有数据")
+    public Message<List<Category>> getAll() {
+        List<Category> categories = categoryService.getAllCategory();
+        return MessageUtil.success(categories);
+    }
+
+
+
+
+
+
+
+
     @GetMapping("/delete")
     @ApiOperation("删除栏目")
     @ApiImplicitParam(name = "id",value = "栏目id",paramType = "query",dataType = "int",required = true)
@@ -46,7 +61,7 @@ public class CategoryController {
         return MessageUtil.success(category);
     }
 
-    @GetMapping("/update")
+    @PostMapping("/update")
     @ApiOperation("更新")
     public Message updateById(Category category) {
         categoryService.saveOrUpdate(category);
@@ -54,12 +69,7 @@ public class CategoryController {
 
     }
 
-    @GetMapping("/getAll")
-    @ApiOperation("获取栏目所有数据")
-    public Message<List<Category>> getAll() {
-        List<Category> categories = categoryService.getAllCategory();
-        return MessageUtil.success();
-    }
+
 
 
 
